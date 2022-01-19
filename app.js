@@ -1,6 +1,8 @@
 import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
+import './src/database'
+import userRouter from './src/routes/UserRoutes'
 
 class App {
   constructor() {
@@ -12,7 +14,9 @@ class App {
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
   }
-  routes() {}
+  routes() {
+    this.app.use('/user/', userRouter)
+  }
 }
 
 export default new App().app
