@@ -48,6 +48,10 @@ export default class User extends Model {
             },
           },
         },
+        ativo: {
+          type: Sequelize.BOOLEAN,
+          defaultValue: true,
+        },
       },
       {
         sequelize,
