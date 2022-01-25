@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 import './src/database'
 import userRouter from './src/routes/UserRoutes'
+import tokenRouter from './src/routes/tokenRouter'
 
 class App {
   constructor() {
@@ -16,6 +17,7 @@ class App {
   }
   routes() {
     this.app.use('/user/', userRouter)
+    this.app.use('/token/', tokenRouter)
   }
 }
 
