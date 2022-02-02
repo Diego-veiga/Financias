@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
 import './src/database'
-import userRouter from './src/routes/UserRoutes'
+import userRouter from './src/routes/userRoutes'
 import tokenRouter from './src/routes/tokenRouter'
 
 class App {

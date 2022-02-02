@@ -8,6 +8,9 @@ const userSchemas = {
     email: Joi.string().required().email(),
     ativo: Joi.boolean().required(),
   }),
+  SHOW: Joi.object().keys({
+    id: Joi.string().guid().required(),
+  }),
 }
 
 export default userSchemas

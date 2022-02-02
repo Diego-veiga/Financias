@@ -13,4 +13,20 @@ router.post(
   userController.store
 )
 
+router.get(
+  '/:id',
+  validateToken,
+  validateRequest(userSchemas.SHOW, 'params'),
+  userController.show
+)
+
+router.get('/', validateToken, userController.index)
+
+router.put(
+  '/:id',
+  validateToken,
+  validateRequest(userSchemas.SHOW, 'params'),
+  userController.update
+)
+
 export default router
