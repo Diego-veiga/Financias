@@ -1,6 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
+import './src/database'
+import userRouter from './src/routes/userRoutes'
+import tokenRouter from './src/routes/tokenRouter'
 
 class App {
   constructor() {
@@ -12,7 +15,10 @@ class App {
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
   }
-  routes() {}
+  routes() {
+    this.app.use('/user/', userRouter)
+    this.app.use('/token/', tokenRouter)
+  }
 }
 
 export default new App().app
