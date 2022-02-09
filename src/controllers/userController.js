@@ -48,6 +48,24 @@ class UserController {
       })
     }
   }
+
+  async delete(req, res) {
+    try {
+      const userDeleted = await User.findByPk(req.params.id)
+      if (!userDeleted || userDeleted.ativo === false) {
+        return res
+          .status(400)
+          .json({ message: 'Usuario não encontrado ou ja excluído' })
+      }
+      userDeleted.ativo = false
+      await userDeleted.save()
+      return res.status(200).json({ message: 'usuario excluído com sucesso' })
+    } catch (e) {
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      })
+    }
+  }
 }
 
 export default new UserController()

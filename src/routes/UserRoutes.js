@@ -29,4 +29,11 @@ router.put(
   userController.update
 )
 
+router.delete(
+  '/:id',
+  validateToken,
+  validateRequest(userSchemas.SHOW, 'params'),
+  userController.delete
+)
+
 export default router
