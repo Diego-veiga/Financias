@@ -46,4 +46,4 @@
   - [ ] Cadastro de Categorias de Depesas
   - [ ] Cadastro de Categorias de Receita
   - [ ] Cadastro de contas bancarias
-  - [ ] Cadastro de instituições bancarias 
+  - [ ] Cadastro de instituições bancarias
