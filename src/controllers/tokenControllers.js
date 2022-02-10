@@ -12,7 +12,7 @@ class TokenController {
         },
       })
       if (!user) {
-        return res.status(400).json({ message: 'Usuario ou senha inválidos' })
+        return res.status(400).json({ message: 'Usuario  ou senha inválidos' })
       }
       if (!(await user.passwordIsValid(password))) {
         return res.status(400).json({ message: 'Usuario ou senha inválidos' })
