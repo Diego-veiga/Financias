@@ -37,13 +37,13 @@
 </h4>
 
 <h4 id='features'>Features</h4>
-  - [x] Cadastro de usuário
-  - [ ] Cadastro de Bandeira do cartão de crédito
-  - [ ] Cadastro de cartão de crédito
-  - [ ] Criação da fatura do cartão
-  - [ ] Cadastro de despesas
-  - [ ] Cadastro de Receitas
-  - [ ] Cadastro de Categorias de Depesas
-  - [ ] Cadastro de Categorias de Receita
-  - [ ] Cadastro de contas bancarias
-  - [ ] Cadastro de instituições bancarias
+  - [x] Cadastro de usuário<br>
+  - [ ] Cadastro de Bandeira do cartão de crédito<br>
+  - [ ] Cadastro de cartão de crédito<br>
+  - [ ] Criação da fatura do cartão<br>
+  - [ ] Cadastro de despesas<br>
+  - [ ] Cadastro de Receitas<br>
+  - [ ] Cadastro de Categorias de Depesas<br>
+  - [ ] Cadastro de Categorias de Receita<br>
+  - [ ] Cadastro de contas bancarias<br>
+  - [ ] Cadastro de instituições bancarias<br>
