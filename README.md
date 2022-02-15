@@ -60,9 +60,11 @@ Tabela de conteúdos
 - [Sequelize](https://sequelize.org/v7/)
 
 ## Autor
+<a href="https://www.linkedin.com/in/diegorobertoveiga/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62670446?s=400&u=ce360c7bc3872fde7996a64a630c3a44ecb1ed30&v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Diego Veiga</b></sub></a> <a href="https://www.linkedin.com/in/diegorobertoveiga/" title="Diego Veiga">🚀</a>
 
-
-<sub><b>Diego Veiga</b></sub>
 
 
 
