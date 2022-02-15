@@ -6,38 +6,38 @@ Tabela de conteúdos
 =================
 
 <!--ts-->
-   * [Iniciando](#iniciando)
+   * <a href="#requisito">Pré-requisitos</a>
    * [Instalacao](#instalacao)
-   * [Status do projeto](#Status)
+   * <a href="#status">Status do projeto</a>
    * [Features](#features)
    * [Tecnologias](#tecnologias)
    * [Autor](#autor)
 <!--te-->
 
-## Iniciando
+<h2 id="requisito">Pré-requisitos</h2>
  Para rodar a aplicação você precisará ter instalado em sua maquina o node na versão 12.18.4 ou superior e precisara
  ter o também o mysql instalado ou uma instância do mesmo no docker.
 
 ## Instalacao
    Para instalação do projeto, siga os seguintes passos:
- 
- #### Clone o projeto
-  Repositório https://github.com/Diego-veiga/Financias.git
 
-#### Instale as dependências
-```bash
-npm i
-```
-#### Crie o banco de dados
-```bash
-npx sequelize db:create
-```
- 
-#### Execute as migrations
-```bash
-npx sequelize db:migrate
-```
- ##  Status do Projeto:
+  #### Clone o projeto
+    Repositório https://github.com/Diego-veiga/Financias.git
+
+  #### Instale as dependências
+  ```bash
+  npm i
+  ```
+  #### Crie o banco de dados
+  ```bash
+  npx sequelize db:create
+  ```
+
+  #### Execute as migrations
+  ```bash
+  npx sequelize db:migrate
+  ```
+<h2 id="status">Status do Projeto</h2>
   Em desenvolvimento
 
 
