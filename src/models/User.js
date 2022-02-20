@@ -67,7 +67,10 @@ export default class User extends Model {
     })
     return this
   }
-  passwordIsValid(password) {
+  async passwordIsValid(password) {
     return bcrypt.compare(password, this.password_hash)
+  }
+  static associate(models) {
+    this.hasMany(models.Banking, { foreignKey: ' user_id' })
   }
 }

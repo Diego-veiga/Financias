@@ -4,6 +4,7 @@ dotenv.config()
 import './src/database'
 import userRouter from './src/routes/userRoutes'
 import tokenRouter from './src/routes/tokenRouter'
+import bankingRouter from './src/routes/bankingController'
 
 class App {
   constructor() {
@@ -18,6 +19,7 @@ class App {
   routes() {
     this.app.use('/user/', userRouter)
     this.app.use('/token/', tokenRouter)
+    this.app.use('/banking/', bankingRouter)
   }
 }
 

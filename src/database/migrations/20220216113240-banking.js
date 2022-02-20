@@ -1,34 +1,34 @@
 'use strict'
+
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable('banking', {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
         unique: true,
       },
-      nome: {
+      name: {
         type: Sequelize.STRING(50),
         defaultValue: '',
-        allowNull: false,
       },
-      sobrenome: {
-        type: Sequelize.STRING(50),
-        defaultValue: '',
+      default: {
+        type: Sequelize.BOOLEAN,
         allowNull: false,
+        defaultValue: false,
       },
-      email: {
-        type: Sequelize.STRING,
-        defaultValue: '',
-        allowNull: false,
-        unique: true,
+      user_id: {
+        type: Sequelize.UUID,
+        allowNull: true,
+        references: {
+          model: 'users',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
-      password_hash: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      ativo: {
+      active: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: true,
@@ -45,6 +45,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('users')
+    await queryInterface.dropTable('banking')
   },
 }
