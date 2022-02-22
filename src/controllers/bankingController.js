@@ -48,9 +48,61 @@ class BankingController {
           attributes: ['id', 'nome', 'email'],
         },
       })
-      return res.status(200).json(bank)
+
+      if (bank) {
+        return res.status(200).json(bank)
+      } else {
+        return res.status(400).json({ message: 'Nenhuma conta encontrada ' })
+      }
     } catch (e) {
-      e.errors.map((err) => err.message)
+      return res.status(500).json({
+        errors: e.errors.map((err) => err.message),
+      })
+    }
+  }
+
+  async update(req, res) {
+    try {
+      const { id } = req.params
+
+      if (Object.keys(req.body).length === 0) {
+        return res
+          .status(400)
+          .json({ message: 'Por favor envie as informações para atualizar' })
+      }
+      const bank = await bankingModel.findOne({
+        where: { [Op.and]: [{ id }, { user_id: req.userId }] },
+      })
+      if (!bank) {
+        return res.status(400).json({ message: 'Nenhuma conta encontrada ' })
+      }
+      const updatedBank = await bank.update(req.body)
+      return res.status(200).json(updatedBank)
+    } catch (e) {
+      return res.status(500).json({
+        errors: e.errors.map((err) => err.message),
+      })
+    }
+  }
+
+  async delete(req, res) {
+    try {
+      const { id } = req.params
+      const bankingDeleted = await bankingModel.findOne({
+        where: {
+          [Op.and]: [{ id }, { user_id: req.userId }, { default: false }],
+        },
+      })
+      if (!bankingDeleted) {
+        return res.status(400).json({ message: 'Banco não encontrado' })
+      }
+      bankingDeleted.active = false
+      await bankingDeleted.save()
+      return res.status(200).json({ message: 'Banco excluído com sucesso' })
+    } catch (e) {
+      return res.status(500).json({
+        errors: e.errors.map((err) => err.message),
+      })
     }
   }
 }
