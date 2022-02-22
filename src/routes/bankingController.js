@@ -19,4 +19,19 @@ router.get(
   validateToken,
   bankingController.index
 )
+
+router.put(
+  '/:id',
+  validateRequest(bankingSchema.GET, 'params'),
+  validateRequest(bankingSchema.PUT, 'body'),
+  validateToken,
+  bankingController.update
+)
+
+router.post(
+  '/:id',
+  validateRequest(bankingSchema.GET, 'params'),
+  validateToken,
+  bankingController.delete
+)
 export default router

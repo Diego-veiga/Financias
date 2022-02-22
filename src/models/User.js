@@ -71,6 +71,6 @@ export default class User extends Model {
     return bcrypt.compare(password, this.password_hash)
   }
   static associate(models) {
-    this.hasMany(models.Banking, { foreignKey: ' user_id' })
+    this.hasMany(models.Banking, { foreignKey: 'user_id' })
   }
 }
